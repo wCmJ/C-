@@ -1,0 +1,99 @@
+C# programs can consist of one or more files.
+Each file can contain zero or more namesapces.
+A namespace can contain types such as classes, structs, interfaces, enumerations, and delegates.
+using System;
+namespace YourNamespace
+{
+    class YourClass
+    {
+    }
+    
+    struct YourStruct
+    {
+    }
+    
+    interface IYourInterface
+    {
+    }
+    
+    delegate int YourDelegate();
+    
+    enum YourEnum
+    {
+    }
+    
+    namespace YourNestedNamespace
+    {
+    }
+
+    class YourMainClass
+    {
+        static void Main(string[] args)
+        {
+        }   
+    }
+}
+
+Structs
+public struct PostalAddress
+{
+    //  Fields, properties, methods and event go here...
+}
+1.  fields cannot be initialized unless they are declared as const or static.
+2.  a struct cannot declare a default constructor or a finalizer.
+3.  structs are copied on assignment.
+4.  structs are value types and classes are reference types.
+5.  unlike classes, structs can be instantiated without using a new operator. (can use new too.)
+6.  structs can declare constructors that have parameteers.
+7.  a struct cannot inherit from another struct or class, and it cannot b the base of a class. inherit directly from System.ValueType, which inherits from System.Object.
+8.  a struct can implement interfaces.
+9.  a struct can be used as a nullable type and can be assigned a null value.
+
+
+Classes
+1.  singal inherit more interfaces.
+2.  can be declared abstract. 
+    an abstract class contains abstract methods that have a signature definition but no implementation. 
+    Abstract classes cannot be instantiated.
+    they can only be used through derived classes that implement the abstract methods.
+    By contrast, a sealed class does not allow other class to derive from it.
+        class A{};
+        sealed class B : A {}
+        no class can inherit from class B.
+    use abstract modifier in a method or property declaration to indicate that the method or property does not contain implementation.
+        1.  an abstract method is implicitly a virtual method.
+        2.  abstract method declarations are only permitted in abstract classes.
+        3.  can declare like this: public abstract void MyMethod();
+        4.  the implementation is provided by a method override, which is a member of a non-abstract class.
+        5.  it is an error to use the static or virtual modifiers in an abstract method declaration.
+        Example:
+            abstract calss BaseClass
+            {
+                protected int _x = 100;
+                protected int _y = 150;
+                public abstract void AbstractMethod();
+                public abstract int X {get;}
+                public abstract int Y {get;}
+            }
+
+
+Namespace
+be used in two ways.
+1.  .NET Framework uses namespaces to organize its many classes, as follows: 
+    System.Console.WriteLine("HI")
+    System is a namespace and Console is a class in that namespace
+    using System;
+    Console.WriteLine("HI");
+
+
+
+
+
+
+
+
+
+
+
+
+
